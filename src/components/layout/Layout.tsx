@@ -9,7 +9,7 @@ function Layout() {
                 </div>
             </div>
 
-            <main className='p-6'>
+            <main>
                 <Outlet />
             </main>
         </div>

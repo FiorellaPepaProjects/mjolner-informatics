@@ -25,6 +25,11 @@ export const getCharacterDetail = async (characterId: Character['_id']): Promise
         }
 
         const parsedResponse = await response.json();
+
+        // If the id is a number but it doesn't exist, the API returns an empty array in 'data' property
+        if (!Object.keys(parsedResponse.data).length) {
+            throw new Error('Error on getting character\'s information');
+        }
         
         return parsedResponse.data;
     } catch (err) {

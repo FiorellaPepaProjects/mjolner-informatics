@@ -42,7 +42,7 @@ function CharacterCard(props: CharacterProps) {
                 <img src={props.character.imageUrl} alt={props.character.name} className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105' />
             </div>
             <div className='p-6 flex flex-col justify-between items-center gap-4'>
-                <h3 className='font-bold text-gray-900 text-lg'>{props.character.name}</h3>
+                <h3 className='font-bold text-gray-900 text-lg text-center'>{props.character.name}</h3>
                 <Button onClick={() => goToCharacterDetails(props.character._id)}>See more</Button>
             </div>
         </Card>
