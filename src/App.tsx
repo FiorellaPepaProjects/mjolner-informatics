@@ -1,9 +1,21 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import Home from './pages/home/Home';
+import CharacterDetail from './pages/characterDetail/CharacterDetail';
+import NotFound from './pages/notFound/NotFound';
+
 function App() {
   return (
-    <div className="flex items-center justify-center h-screen">
-      <h1 className="text-4xl font-bold text-center">Mjølner Frontend Case</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='character/:id' element={<CharacterDetail />} />
+          <Route path='*' element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;
