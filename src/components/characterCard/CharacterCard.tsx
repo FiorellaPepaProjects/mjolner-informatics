@@ -33,19 +33,15 @@ function CharacterCard(props: CharacterProps) {
     };
 
     return (
-        <div className='group bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden'>
+        <Card>
             <div className='aspect-square overflow-hidden'>
-                <img
-                    src={props.character.imageUrl}
-                    alt={props.character.name}
-                    className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
-                />
+                <img src={props.character.imageUrl} alt={props.character.name} className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105' />
             </div>
-            <div className='p-6 flex flex-col justify-between items-center gap-2'>
+            <div className='p-6 flex flex-col justify-between items-center gap-4'>
                 <h3 className='font-bold text-gray-900 text-lg'>{props.character.name}</h3>
                 <Button onClick={() => goToCharacterDetails(props.character._id)}>See more</Button>
             </div>
-        </div>
+        </Card>
     );
 }
 
