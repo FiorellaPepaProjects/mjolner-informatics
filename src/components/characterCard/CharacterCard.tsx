@@ -1,4 +1,6 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '../button/Button';
+import Card from '../card/Card';
 
 export interface Character {
     // Main info
@@ -28,8 +30,10 @@ interface CharacterProps {
 }
 
 function CharacterCard(props: CharacterProps) {
+    const navigate = useNavigate();
+
     const goToCharacterDetails = (characterId: number): void => {
-        // TODO: add routing to CharacterDetail
+        navigate(`character/${characterId}`);
     };
 
     return (
